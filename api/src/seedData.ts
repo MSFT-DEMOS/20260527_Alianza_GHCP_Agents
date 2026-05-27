@@ -160,6 +160,16 @@ export const products: Product[] = [
         sku: "CAT-TRACKER-001",
         unit: "piece",
         imgName: "tracker-mat.png"
+    },
+    {
+        productId: 13,
+        supplierId: 1,
+        name: "Mona Desk Guardian",
+        description: "A polished OctoCAT-style desk figurine for help desks, branch counters, and developer nooks. It keeps watch over backlog rituals, customer demos, and very important snack inventory.",
+        price: 34.99,
+        sku: "CAT-MONA-DESK-001",
+        unit: "piece",
+        imgName: "MonaFigurine.png"
     }
 ];
 

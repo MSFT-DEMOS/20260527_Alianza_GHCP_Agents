@@ -160,6 +160,17 @@ export const products: Product[] = [
         sku: "CAT-TRACKER-001",
         unit: "piece",
         imgName: "tracker-mat.png"
+    },
+    {
+        productId: 13,
+        supplierId: 1,
+        name: "Mona Launch Edition Figurine",
+        description: "A limited-run OctoCAT display piece for product launches, executive demos, and celebratory release desks. Includes premium collector positioning with a launch-window promotion.",
+        price: 89.00,
+        sku: "CAT-MONA-LAUNCH-001",
+        unit: "piece",
+        imgName: "MonaFigurine.png",
+        discount: 0.15
     }
 ];
 

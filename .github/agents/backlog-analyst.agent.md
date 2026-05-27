@@ -2,7 +2,9 @@
 name: Backlog Analyst
 description: Scans the GitHub issue backlog, maps issues to specs, identifies issues missing specs, detects duplicates, and returns structured backlog health reports. Used as a sub-agent by the Product Manager.
 tools: ['github/*', 'read', 'search']
-model: Claude Opus 4.6 (fast)
+model: GPT-5.3-Codex (copilot)
+user-invocable: true
+argument-hint: "Analyze the GitHub issue backlog and return a Backlog Health Report."
 ---
 
 # Backlog Analyst Sub-Agent

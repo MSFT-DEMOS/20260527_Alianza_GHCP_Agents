@@ -2,7 +2,7 @@
 name: Product Manager
 description: A complete product management agent that handles roadmap planning, feature specification, user story creation, backlog grooming, competitive analysis, and stakeholder communication — all grounded in the codebase and GitHub project data.
 tools: ['search', 'read', 'edit', 'github/*', 'playwright/*', 'web', 'agent', 'todo']
-model: Claude Opus 4.6 (fast)
+model: GPT-5.5 (copilot)
 ---
 
 # Product Manager Agent
@@ -42,7 +42,7 @@ Invoke @codebase-analyst:
 
 ```
 Invoke @backlog-analyst:
-  "Scan the GitHub issue backlog for MSFT-DEMOS/GitHubCopilot_Customized_TechConnect.
+  "Scan the GitHub issue backlog for the base repository.
    Cross-reference all open issues against specs in docs/specs/. Return the
    Backlog Health Report."
 ```

@@ -104,6 +104,11 @@ export default function AdminProducts() {
     return sortOrder === 'asc' ? '↑' : '↓';
   };
 
+  const getAriaSort = (field: SortField) => {
+    if (field !== sortField) return 'none';
+    return sortOrder === 'asc' ? 'ascending' : 'descending';
+  };
+
   if (!isAdmin) {
     return <Navigate to="/" replace />;
   }
@@ -128,34 +133,69 @@ export default function AdminProducts() {
           <thead className={`${darkMode ? 'bg-gray-800' : 'bg-gray-200'} transition-colors duration-300`}>
             <tr>
               <th 
-                className={`px-6 py-3 text-left text-xs font-medium ${darkMode ? 'text-light' : 'text-gray-700'} uppercase tracking-wider cursor-pointer hover:${darkMode ? 'bg-gray-700' : 'bg-gray-300'} transition-colors duration-300`}
-                onClick={() => handleSort('name')}
+                aria-sort={getAriaSort('name')}
+                className={`px-6 py-3 text-left text-xs font-medium ${darkMode ? 'text-light' : 'text-gray-700'} uppercase tracking-wider transition-colors duration-300`}
               >
-                Name {renderSortIcon('name')}
+                <button
+                  type="button"
+                  className={`inline-flex w-full items-center gap-1 text-left hover:${darkMode ? 'text-gray-200' : 'text-gray-900'} transition-colors duration-300`}
+                  onClick={() => handleSort('name')}
+                  aria-label="Sort by name"
+                >
+                  Name <span aria-hidden="true">{renderSortIcon('name')}</span>
+                </button>
               </th>
               <th 
-                className={`px-6 py-3 text-left text-xs font-medium ${darkMode ? 'text-light' : 'text-gray-700'} uppercase tracking-wider cursor-pointer hover:${darkMode ? 'bg-gray-700' : 'bg-gray-300'} transition-colors duration-300`}
-                onClick={() => handleSort('supplier')}
+                aria-sort={getAriaSort('supplier')}
+                className={`px-6 py-3 text-left text-xs font-medium ${darkMode ? 'text-light' : 'text-gray-700'} uppercase tracking-wider transition-colors duration-300`}
               >
-                Supplier {renderSortIcon('supplier')}
+                <button
+                  type="button"
+                  className={`inline-flex w-full items-center gap-1 text-left hover:${darkMode ? 'text-gray-200' : 'text-gray-900'} transition-colors duration-300`}
+                  onClick={() => handleSort('supplier')}
+                  aria-label="Sort by supplier"
+                >
+                  Supplier <span aria-hidden="true">{renderSortIcon('supplier')}</span>
+                </button>
               </th>
               <th 
-                className={`px-6 py-3 text-left text-xs font-medium ${darkMode ? 'text-light' : 'text-gray-700'} uppercase tracking-wider cursor-pointer hover:${darkMode ? 'bg-gray-700' : 'bg-gray-300'} transition-colors duration-300`}
-                onClick={() => handleSort('price')}
+                aria-sort={getAriaSort('price')}
+                className={`px-6 py-3 text-left text-xs font-medium ${darkMode ? 'text-light' : 'text-gray-700'} uppercase tracking-wider transition-colors duration-300`}
               >
-                Price {renderSortIcon('price')}
+                <button
+                  type="button"
+                  className={`inline-flex w-full items-center gap-1 text-left hover:${darkMode ? 'text-gray-200' : 'text-gray-900'} transition-colors duration-300`}
+                  onClick={() => handleSort('price')}
+                  aria-label="Sort by price"
+                >
+                  Price <span aria-hidden="true">{renderSortIcon('price')}</span>
+                </button>
               </th>
               <th 
-                className={`px-6 py-3 text-left text-xs font-medium ${darkMode ? 'text-light' : 'text-gray-700'} uppercase tracking-wider cursor-pointer hover:${darkMode ? 'bg-gray-700' : 'bg-gray-300'} transition-colors duration-300`}
-                onClick={() => handleSort('sku')}
+                aria-sort={getAriaSort('sku')}
+                className={`px-6 py-3 text-left text-xs font-medium ${darkMode ? 'text-light' : 'text-gray-700'} uppercase tracking-wider transition-colors duration-300`}
               >
-                SKU {renderSortIcon('sku')}
+                <button
+                  type="button"
+                  className={`inline-flex w-full items-center gap-1 text-left hover:${darkMode ? 'text-gray-200' : 'text-gray-900'} transition-colors duration-300`}
+                  onClick={() => handleSort('sku')}
+                  aria-label="Sort by sku"
+                >
+                  SKU <span aria-hidden="true">{renderSortIcon('sku')}</span>
+                </button>
               </th>
               <th 
-                className={`px-6 py-3 text-left text-xs font-medium ${darkMode ? 'text-light' : 'text-gray-700'} uppercase tracking-wider cursor-pointer hover:${darkMode ? 'bg-gray-700' : 'bg-gray-300'} transition-colors duration-300`}
-                onClick={() => handleSort('unit')}
+                aria-sort={getAriaSort('unit')}
+                className={`px-6 py-3 text-left text-xs font-medium ${darkMode ? 'text-light' : 'text-gray-700'} uppercase tracking-wider transition-colors duration-300`}
               >
-                Unit {renderSortIcon('unit')}
+                <button
+                  type="button"
+                  className={`inline-flex w-full items-center gap-1 text-left hover:${darkMode ? 'text-gray-200' : 'text-gray-900'} transition-colors duration-300`}
+                  onClick={() => handleSort('unit')}
+                  aria-label="Sort by unit"
+                >
+                  Unit <span aria-hidden="true">{renderSortIcon('unit')}</span>
+                </button>
               </th>
               <th 
                 className={`px-6 py-3 text-left text-xs font-medium ${darkMode ? 'text-light' : 'text-gray-700'} uppercase tracking-wider transition-colors duration-300`}

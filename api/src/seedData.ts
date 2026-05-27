@@ -160,6 +160,16 @@ export const products: Product[] = [
         sku: "CAT-TRACKER-001",
         unit: "piece",
         imgName: "tracker-mat.png"
+    },
+    {
+        productId: 13,
+        supplierId: 1,
+        name: "Mona Branch Welcome Kit",
+        description: "A branch-ready display kit centered on the Mona figurine, packaged for front counters, onboarding desks, and showroom refreshes that need instant OctoCAT personality.",
+        price: 149.50,
+        sku: "CAT-MONA-KIT-001",
+        unit: "kit",
+        imgName: "MonaFigurine.png"
     }
 ];
 
